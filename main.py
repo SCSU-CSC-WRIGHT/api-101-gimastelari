@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/temperature/<city>')
 def temperature(city):
-    payload = {'APPID': '*******************', 'q':city}
+    payload = {'APPID':'7ac8a590451d10bb5b4f351b8e49225e', 'q':city}
     URL = 'http://api.openweathermap.org/data/2.5/weather'
     response = requests.get(URL, params = payload)
     if response.status_code == 200:
@@ -31,7 +31,7 @@ def read_temps():
               'Charleston', 'Bozeman', 'Seattle', 'Denver']
     URL = 'http://api.openweathermap.org/data/2.5/weather'
     for city in cities:
-        payload = {'APPID': '*******************', 'q':city}
+        payload = {'APPID': '7ac8a590451d10bb5b4f351b8e49225e', 'q':city}
         response = requests.get(URL, params = payload)
         if response.status_code == 200:
             print('Success!', file = sys.stdout)
